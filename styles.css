@@ -18,6 +18,80 @@ body {
   align-items: center;
   justify-content: center;
   padding: 24px;
+  margin: 0;
+
+}
+
+.frame {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  background-color: lightgrey;
+  border-radius: 25px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.tv-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 0, 0, 0.5);
+  border-radius: 3px;
+}
+
+.tv-body {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.tv-frame {
+  flex: 1;
+  min-height: 80vh;
+  background-color: lightgrey;
+  border-radius: 15px;
+  padding: 40px 50px;
+}
+
+.glass-container {
+  max-width: 720px;
+}
+
+.nfsa-text {
+  font-size: 0.75rem;
+  margin: 0 0 10px;
+  color: rgb(85, 85, 85);
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin: 0 0 20px;
+}
+
+.home-text {
+  font-size: 1.2rem;
+  line-height: 1;
+  margin: 0 0 15px;
+}
+
+.decade-carousel {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  margin-top: 35px;
+  padding-bottom: 10px;
+}
+
+.decades {
+  flex: 0 0 auto;
+  background: white;
+  border: 2px solid grey;
+  border-radius: 10px;
 }
 
 .nav-wrapper {
@@ -27,18 +101,3 @@ body {
   flex: 0 0 15vw;
   align-items: center;
 }
-
-.tv-frame {
-  flex: 1;
-  height: 100vh;
-  background-color: lightgrey;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.glass-container {
-  height: 80%;
-}
-
