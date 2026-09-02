@@ -24,19 +24,21 @@ body {
   display: flex;
   flex-direction: row;
   align-items: stretch;
+  padding:20px;
   gap: 20px;
+  width: 100%;
 }
 
 .tv-frame {
   flex: 1;
-  min-height: 80vh;
+  min-height: 85vh;
   background-color: lightgrey;
   border-radius: 15px;
-  padding: 40px 50px;
+  padding: 50px 50px;
 }
 
 .glass-container {
-  max-width: 720px;
+  max-width: 850px;
 }
 
 .nfsa-text {
@@ -81,6 +83,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
 .nav-items {
@@ -111,4 +114,35 @@ h1 {
 
 .nav-items a:hover {
   background: white;
+}
+
+@media (max-width:640px) {
+  .tv-body {
+    flex-direction: column;
+  }
+
+  .nav-wrapper {
+    order: -1;
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+  }
+
+  .nav-items {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .nav-items a {
+    width: 60px;
+    height: 60px;
+    font-size: 0.6rem;
+  }
+
+  .tv-frame {
+    padding: 20px;
+  }
 }
