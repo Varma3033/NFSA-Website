@@ -18,52 +18,55 @@ body {
   justify-content: center;
   margin: 0;
   Padding: 0;
+  overflow-x: hidden;
 }
 
 .tv-body {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  padding:20px;
-  gap: 20px;
+  padding:clamp(10px, 3vw, 20px);
+  gap: clamp(10px, 2vw, 20px);
   width: 100%;
 }
 
 .tv-frame {
   flex: 1;
+  min-width: 0;
   min-height: 85vh;
   background-color: lightgrey;
   border-radius: 15px;
-  padding: 50px 50px;
+  padding: clamp(20px, 5vw, 50px);
 }
 
 .glass-container {
   max-width: 850px;
+  min-width: 0;
 }
 
 .nfsa-text {
-  font-size: 0.75rem;
+  font-size: clamp(0.6rem, 1.5vw, 0.75rem);
   margin: 0 0 10px;
   color: rgb(85, 85, 85);
 }
 
 h1 {
-  font-size: 2.5rem;
-  line-height: 1.2;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: 1.25;
   margin: 0 0 20px;
 }
 
 .home-text {
-  font-size: 1.2rem;
-  line-height: 1;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  line-height: 1.25;
   margin: 0 0 15px;
 }
 
 .decade-carousel {
   display: flex;
-  gap: 15px;
+  gap: clamp(7.5px, 1.25vw, 15px);
   overflow-x: auto;
-  margin-top: 35px;
+  margin-top: clamp(15px, 4vw, 30px);
   padding-bottom: 10px;
 }
 
@@ -72,18 +75,18 @@ h1 {
   background: white;
   border: 2px solid grey;
   border-radius: 10px;
-  padding: 10px 20px;
+  padding: clamp(7.5px, 5vw, 500px) clamp(15px, 5vw, 100px);
   text-decoration: none;
   color: black;
-  font-size: 1rem;
+  font-size: clamp(0.6rem, 2vw, 4rem);
+  
 }
 
 .nav-wrapper {
-  flex: 0 0 100px;
+  flex: 0 0 clamp(100px, 15vw, 150px);
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
 }
 
 .nav-items {
@@ -92,7 +95,7 @@ h1 {
   padding: 0;
   display:flex;
   flex-direction:column;
-  gap: 25px;
+  gap: clamp(15px, 2.5vw, 25px);
 
 }
 
@@ -100,14 +103,14 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
-  height: 100px;
+  width: clamp(55px, 10vw, 100px);
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   background: lightgrey;
-  border: 10px solid grey;
+  border: clamp(5px, 0.75vw, 10px) solid grey;
   color: black;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: clamp(0.6rem, 1.5vw, 1rem);
   text-align: center;
   padding: 5px; 
 }
@@ -121,28 +124,37 @@ h1 {
     flex-direction: column;
   }
 
+  .tv-frame {
+    min-height: 80vh;
+  }
+
   .nav-wrapper {
     order: -1;
     flex: 0 0 auto;
     width: 100%;
     height: auto;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
   }
 
   .nav-items {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
   }
 
   .nav-items a {
-    width: 60px;
-    height: 60px;
-    font-size: 0.6rem;
+    width: 72px;
   }
 
-  .tv-frame {
-    padding: 20px;
+  .decade-carousel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow-x: visible;
+  }
+
+  .decades {
+    width: 100%;
+    text-align: center;
+    height: 75px;
   }
 }
