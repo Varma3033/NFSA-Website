@@ -26,10 +26,10 @@ body {
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
-  overflow-y: hidden;
   border: 3px solid rgba(0, 0, 0, 0.9);
-  box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.6),
-  inset 3px 4px 5px rgba(128, 128, 128, 0.5);
+  box-shadow:
+    inset 0px 0px 50px rgba(0, 0, 0, 0.6),
+    inset 3px 4px 5px rgba(128, 128, 128, 0.5);
 }
 
 /*screen*/
@@ -54,8 +54,9 @@ body {
   border: 2px solid rgba(0, 0, 0, 0.9);
   border-radius: 15px;
   padding: clamp(20px, 5vw, 50px);
-  box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.5),
-  inset 3px 4px 5px rgba(128, 128, 128, 0.5);
+  box-shadow:
+    inset 0px 0px 7px rgba(0, 0, 0, 0.5),
+    inset 3px 4px 5px rgba(128, 128, 128, 0.5);
 }
 
 /*title*/
@@ -169,7 +170,7 @@ h1 {
 .channel-label {
   background: lightgrey;
   color: black;
-  font-size: clamp(0.65rem, 1.25vw, 1rem);
+  font-size: clamp(0.8rem, 1.25vw, 1rem);
   font-weight: bold;
   padding: 3px 8px;
   border-radius: 10px;
@@ -540,11 +541,7 @@ h1 {
   }
 
   .channels-section h2 {
-    font-size: clamp(0.9rem, 2.5vw, 1.25rem);
     margin: 0 50px;
-    color: black;
-    font-weight: lighter;
-    text-align: center;
   }
 
   /*turn into top-navigation*/
@@ -577,15 +574,9 @@ h1 {
     width: 100%;
     text-align: center;
     height: 75px;
-    padding: clamp(10px, 2.5vw, 500px) clamp(10px, 2.5vw, 100px);
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-  }
-
-  .channel-label {
-    font-size: clamp(0.8rem, 1.25vw, 1rem);
   }
 
   .ch-img {
