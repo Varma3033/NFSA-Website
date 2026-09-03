@@ -91,7 +91,13 @@ h1 {
   padding: 0 clamp(10px, 4vw, 200px);
 }
 
-.about-wrapper h2 {
+.about-h2 {
+  font-size: clamp(0.7rem, 2vw, 1.5rem);
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.NFSA-h2 {
   font-size: clamp(0.7rem, 2vw, 1.5rem);
   padding-bottom: 0;
   padding-top: 25px;
