@@ -266,6 +266,24 @@ h1 {
   margin-bottom: clamp(20px, 4vw, 35px);
   border-bottom: 1px solid rgba(0, 0, 0, 0.6);
   padding-bottom: clamp(15px, 2vw, 30px);
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  color: black;
+  text-decoration: none;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
 }
 
 .cd-text {
@@ -278,6 +296,15 @@ h1 {
   color: grey;
 }
 
+.cd-textna {
+  font-size: clamp(0.9rem, 1.75vw, 1.5rem);
+  color: black;
+  text-decoration: none;
+}
+
+.cd-textna:hover {
+  color: red;
+}
 .cd-arrow {
   display: flex;
   align-items: center;
@@ -294,6 +321,82 @@ h1 {
 .cd-arrow:hover {
   background: black;
   color: white;
+}
+
+.decade-themes {
+  width: 100%;
+  text-align: center;
+  margin-bottom: clamp(20px,5vw, 20px);
+}
+
+.decade-themes h2 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  margin: 0 0 10px;
+}
+
+.decade-themes p {
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  margin: 0 auto;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.5);
+  max-width: 620px;
+}
+
+.decade-grid {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: clamp(20px, 5vw, 50px);
+}
+
+.type-card {
+  background: white;
+  border: 1px solid grey;
+  border-radius: 10px;
+  padding: clamp(10px, 8vw, 40px);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  gap: 12px;
+  flex: 0 0 clamp(150px, 5vw, 200px)
+}
+
+.type-card:hover {
+  border-color: black;
+}
+
+.type-name {
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: bold;
+}
+
+.type-images {
+  display: flex;
+  gap: 10px;
+}
+
+.type-img {
+  width: clamp(75px, 10vw, 200px);
+  height: clamp(75px, 10vw, 200px);
+  border-radius: 5px;
+  background: repeating-linear-gradient(
+    45deg,
+    lightgrey,
+    lightgrey 8px,
+    grey 10px,
+    grey 10px
+  );
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  font-size: 0.5rem;
+  color: black;
+}
+
+.type-count {
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
 }
 
 .current-decade {
@@ -424,7 +527,7 @@ h1 {
 }
 
 
-/*smaller screens*/
+/*smaller screen*/
 @media (max-width: 640px) {
   .tv-body {
     flex-direction: column;
@@ -487,6 +590,20 @@ h1 {
     display: none;
   }
 
+  .decade-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .type-card {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .type-images {
+  gap: 30px;
+  }
+
   /* possibility?
   .cd-text {
     display: none;
@@ -496,7 +613,6 @@ h1 {
   .item-body {
   overflow-y: hidden;
 }
-
 
   .item-grid {
     grid-template-columns: repeat(2, 1fr);
