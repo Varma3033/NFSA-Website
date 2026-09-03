@@ -8,8 +8,15 @@ html {
   scroll-behavior: smooth;
 }
 
+/*frame*/
 body {
-  background-color: rgb(68, 29, 3);
+  background: repeating-linear-gradient(
+    180deg,
+    rgb(107, 86, 66),
+    rgb(107, 86, 66) 5px,
+    rgba(0, 0, 0, 0.9) 1px,
+    rgba(0, 0, 0, 0.7) 7px
+  );
   color: black;
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
@@ -17,15 +24,17 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0;
-  Padding: 0;
+  padding: 0;
   overflow-x: hidden;
 }
 
+/*screen*/
 .tv-body {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  padding:clamp(10px, 3vw, 20px);
+  padding-right: clamp(10px, 3vw, 20px);
+  padding-left: clamp(10px, 5vw, 80px);
   gap: clamp(10px, 2vw, 20px);
   width: 100%;
 }
@@ -33,15 +42,21 @@ body {
 .tv-frame {
   flex: 1;
   min-width: 0;
-  min-height: 85vh;
-  background-color: lightgrey;
+  height: 90vh;
+  background-color: rgb(223, 223, 223);
   border-radius: 15px;
   padding: clamp(20px, 5vw, 50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 5px rgba(0, 0, 0, 0.5);
 }
-
-.glass-container {
-  max-width: 850px;
-  min-width: 0;
+/*title*/
+.hero-text {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 clamp(20px, 4vw, 35px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .nfsa-text {
@@ -51,23 +66,61 @@ body {
 }
 
 h1 {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: clamp(1.5rem, 4vw, 4rem);
   line-height: 1.25;
-  margin: 0 0 20px;
+  margin: 0 0 10px;
 }
 
 .home-text {
-  font-size: clamp(0.9rem, 2vw, 1.2rem);
-  line-height: 1.25;
-  margin: 0 0 15px;
+  display: block;
+  font-size: clamp(0.9rem, 2vw, 1.75rem);
+  line-height: 1.5;
+  padding-bottom: 20px;
 }
 
+/*decades text*/
+.channels-section {
+  width: 100%;
+}
+
+.channels-section h2 {
+  font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+  margin: 0 100px;
+  color: black;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.channels-section h3 {
+  font-size: clamp(0.75rem, 2vw, 1.2rem);
+  margin: 0 0 30px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+.scroll-text {
+  font-size: clamp(0.6rem, 1.5vw, 1rem);
+  text-align: left;
+  margin: 0 auto 3px;
+  font-style: italic;
+  font-weight: medium;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/*channels*/
 .decade-carousel {
+  width: 100%;
   display: flex;
-  gap: clamp(7.5px, 1.25vw, 15px);
+  gap: clamp(10px, 1.25vw, 20px);
   overflow-x: auto;
-  margin-top: clamp(15px, 4vw, 30px);
-  padding-bottom: 10px;
+  padding-bottom: 20px;
+  scrollbar-width: thin;
+  scrollbar-color: black white;
+}
+
+.decade-carousel::-webkit-scrollbar {
+  height: 10px;
 }
 
 .decades {
@@ -75,13 +128,71 @@ h1 {
   background: white;
   border: 2px solid grey;
   border-radius: 10px;
-  padding: clamp(7.5px, 5vw, 500px) clamp(15px, 5vw, 100px);
+  padding: clamp(10px, 3vw, 100px);
   text-decoration: none;
   color: black;
-  font-size: clamp(0.6rem, 2vw, 4rem);
-  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 10px;
 }
 
+.channel-label {
+  background: lightgrey;
+  color: black;
+  font-size: clamp(0.65rem, 1.25vw, 1rem);
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.ch-img {
+  display: flex;
+  gap: 6px;
+}
+
+.ch-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  background: repeating-linear-gradient(
+    45deg,
+    lightgrey,
+    lightgrey 8px,
+    grey 10px,
+    grey 10px
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: black;
+  text-align: center;
+}
+
+.item-count {
+  font-size: 1rem;
+  color: black;
+  font-weight: bold;
+}
+
+.items-numbers {
+  color: rgba(0, 0, 0, 0.6);
+  margin-top: 50px;
+  margin-bottom: 5px;
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  text-align: center;
+}
+
+.copyright {
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+  text-align: center;
+}
+
+/*side navigation*/
 .nav-wrapper {
   flex: 0 0 clamp(100px, 15vw, 150px);
   display: flex;
@@ -93,10 +204,9 @@ h1 {
   list-style: none;
   margin: 0;
   padding: 0;
-  display:flex;
-  flex-direction:column;
+  display: flex;
+  flex-direction: column;
   gap: clamp(15px, 2.5vw, 25px);
-
 }
 
 .nav-items a {
@@ -106,28 +216,36 @@ h1 {
   width: clamp(55px, 10vw, 100px);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  background: lightgrey;
-  border: clamp(5px, 0.75vw, 10px) solid grey;
-  color: black;
+  border: clamp(5px, 0.75vw, 10px) solid black;
+  color: white;
   text-decoration: none;
   font-size: clamp(0.6rem, 1.5vw, 1rem);
   text-align: center;
-  padding: 5px; 
+  padding: 5px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgb(107, 86, 66) 1px,
+    rgb(107, 86, 66) 2px,
+    rgba(0, 0, 0, 0.9) 2px,
+    rgba(0, 0, 0, 0.7) 3px
+  );
 }
 
 .nav-items a:hover {
-  background: white;
+  background: black;
 }
 
-@media (max-width:640px) {
+/*smaller screens*/
+@media (max-width: 640px) {
   .tv-body {
     flex-direction: column;
+    padding: clamp(10px, 3vw, 20px);
   }
 
   .tv-frame {
     min-height: 80vh;
   }
-
+  /*top navigation*/
   .nav-wrapper {
     order: -1;
     flex: 0 0 auto;
@@ -156,5 +274,19 @@ h1 {
     width: 100%;
     text-align: center;
     height: 75px;
+    padding: clamp(10px, 2.5vw, 500px) clamp(10px, 2.5vw, 100px);
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
+
+  .channel-label {
+    font-size: clamp(0.8rem, 1.25vw, 1rem);
+  }
+
+  .ch-img {
+    display: none;
+  }
+
 }
