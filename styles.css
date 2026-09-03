@@ -19,13 +19,17 @@ body {
   );
   color: black;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0;
-  padding: 0;
   overflow-x: hidden;
+  overflow-y: hidden;
+  border: 3px solid rgba(0, 0, 0, 0.9);
+  box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.6),
+  inset 3px 4px 5px rgba(128, 128, 128, 0.5);
 }
 
 /*screen*/
@@ -41,16 +45,17 @@ body {
 
 .tv-frame {
   flex: 1;
-  min-width: 0;
-  height: 90vh;
-  background-color: rgb(223, 223, 223);
-  border-radius: 15px;
-  padding: clamp(20px, 5vw, 50px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 5px rgba(0, 0, 0, 0.5);
-  
+  min-width: 0;
+  height: 90vh;
+  background-color: rgb(223, 223, 223);
+  border: 2px solid rgba(0, 0, 0, 0.9);
+  border-radius: 15px;
+  padding: clamp(20px, 5vw, 50px);
+  box-shadow: inset 0px 0px 7px rgba(0, 0, 0, 0.5),
+  inset 3px 4px 5px rgba(128, 128, 128, 0.5);
 }
 
 /*title*/
@@ -328,7 +333,7 @@ h1 {
 .decade-themes {
   width: 100%;
   text-align: center;
-  margin-bottom: clamp(20px,5vw, 20px);
+  margin-bottom: clamp(20px, 5vw, 20px);
 }
 
 .decade-themes h2 {
@@ -362,7 +367,7 @@ h1 {
   align-items: center;
   color: black;
   gap: 12px;
-  flex: 0 0 clamp(150px, 5vw, 200px)
+  flex: 0 0 clamp(150px, 5vw, 200px);
 }
 
 .type-card:hover {
@@ -392,7 +397,7 @@ h1 {
   );
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   font-size: 0.5rem;
   color: black;
 }
@@ -458,15 +463,14 @@ h1 {
   margin-bottom: clamp(5px, 2vw, 20px);
 }
 
-
 .item-details {
   width: 100%;
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   gap: clamp(20px, 4vw, 40px);
   align-items: flex-start;
   margin-bottom: clamp(20px, 4vw, 40px);
-  padding: 0 clamp(10px, 1.5vw, 40px)
+  padding: 0 clamp(10px, 1.5vw, 40px);
 }
 
 .item-data {
@@ -523,7 +527,6 @@ h1 {
   margin: 0 0 15px;
   text-align: left;
 }
-
 
 /*smaller screen*/
 @media (max-width: 640px) {
@@ -600,7 +603,7 @@ h1 {
   }
 
   .type-images {
-  gap: 30px;
+    gap: 30px;
   }
 
   /* possibility?
@@ -610,8 +613,8 @@ h1 {
   */
 
   .item-body {
-  overflow-y: hidden;
-}
+    overflow-y: hidden;
+  }
 
   .item-grid {
     grid-template-columns: repeat(2, 1fr);
