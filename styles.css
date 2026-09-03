@@ -374,7 +374,6 @@ h1 {
   align-items: center;
   color: black;
   gap: 12px;
-  flex: 0 0 clamp(150px, 5vw, 200px);
 }
 
 .type-card:hover {
@@ -541,7 +540,7 @@ h1 {
     flex-direction: column;
     padding: clamp(10px, 3vw, 20px);
   }
-
+  
   .tv-frame {
     min-height: 80vh;
   }
@@ -596,7 +595,8 @@ h1 {
 
   .type-card {
     width: 100%;
-    flex: 0 0 auto;
+    margin-bottom: 20px;
+    height: 200px;
   }
 
   .type-images {
