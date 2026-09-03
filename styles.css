@@ -52,6 +52,7 @@ body {
   box-shadow: 5px rgba(0, 0, 0, 0.5);
   
 }
+
 /*title*/
 .hero-text {
   width: 100%;
@@ -196,7 +197,6 @@ h1 {
 .item-count {
   font-size: 1rem;
   color: black;
-  font-weight: bold;
 }
 
 .items-numbers {
@@ -257,6 +257,7 @@ h1 {
   background: black;
 }
 
+/*top nav*/
 .change-decade {
   width: 100%;
   display: flex;
@@ -323,6 +324,7 @@ h1 {
   color: white;
 }
 
+/*decade info page*/
 .decade-themes {
   width: 100%;
   text-align: center;
@@ -338,7 +340,7 @@ h1 {
   font-size: clamp(0.75rem, 1.5vw, 1rem);
   margin: 0 auto;
   line-height: 1.5;
-  color: rgba(0, 0, 0, 0.5);
+  color: black;
   max-width: 620px;
 }
 
@@ -407,19 +409,7 @@ h1 {
   text-align: center;
 }
 
-.collection-count {
-  width: 100%;
-  text-align: center;
-  color: rgba(0, 0, 0, 0.6);
-  margin: 0 0 clamp(15px, 3vw, 25px);
-}
-
-.item-body {
-  width: 100%;
-  overflow-y: auto;
-  margin-bottom: clamp(5px, 2vw, 20px);
-}
-
+/*decade collection pages*/
 .item-grid {
   width: 100%;
   display: grid;
@@ -460,6 +450,14 @@ h1 {
   font-size: clamp(0.75rem, 1.5vw, 1rem);
   text-align: center;
 }
+
+/*collection item pages*/
+.item-body {
+  width: 100%;
+  overflow-y: auto;
+  margin-bottom: clamp(5px, 2vw, 20px);
+}
+
 
 .item-details {
   width: 100%;
@@ -546,7 +544,7 @@ h1 {
     text-align: center;
   }
 
-  /*top navigation*/
+  /*turn into top-navigation*/
   .nav-wrapper {
     order: -1;
     flex: 0 0 auto;
@@ -565,6 +563,7 @@ h1 {
     width: 72px;
   }
 
+  /*carousel into grid*/
   .decade-carousel {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
