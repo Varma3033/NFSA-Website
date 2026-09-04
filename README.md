@@ -22,11 +22,11 @@ Things like Dials turning, carousel, and dynamic elements to help give off a bet
 Not sure about the current font, might change as I dont like the headings being so bold. Also maybe need to fix sizing on smaller screens
 
 # References
->https://developer.mozilla.org/en-US/docs/Web/HTML
+>MDN Web Docs (2025, December 22). HTML: HyperText Markup Language.https://developer.mozilla.org/en-US/docs/Web/HTML
 
->https://www.w3schools.com/css/default.asp
+>W3Schools. (n.d.) HTML styles CSS. https://www.w3schools.com/css/default.asp
 
 >Claude AI: 
 Mainly with the outside tv frame - helped fix frame and navigation alignment/padding, especially when scaling screen size down. Also helped with creating placeholder image pattern design.
 
->https://fonts.google.com/specimen/VT323?preview.layout=grid&preview.script=Latn
+> Hull, P. (2011). VT323 [Font]. Google Fonts. https://fonts.google.com/specimen/VT323?preview.layout=grid&preview.script=Latn
