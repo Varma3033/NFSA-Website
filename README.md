@@ -10,7 +10,7 @@ Purposefully designed so that users can explore, rather than search; following t
 
 # Things to add/fix
 >All images, collection items & details, and collection counts:
-They will be populated via API and collection item cards will be created through javascript-repeat card elements.
+They will be populated via API and collection item cards will be created through javascript-repeat card elements. Also random section will use javascript to view a random card each time the random dial is clicked, and then populated via API.
 
 >TV frame:
 Want to make site look more realistic, like an old-scholl TV
