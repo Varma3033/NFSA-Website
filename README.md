@@ -23,6 +23,6 @@ Not sure about the current font, might change as I dont like the headings being 
 >https://www.w3schools.com/css/default.asp
 
 >Claude AI: 
-Mainly with the outside tv frame - helped fix frame and navigation alignment/padding, especially when scaling screen size down. Also helped with creating Placeholder image pattern design.
+Mainly with the outside tv frame - helped fix frame and navigation alignment/padding, especially when scaling screen size down. Also helped with creating placeholder image pattern design.
 
 >https://fonts.google.com/specimen/VT323?preview.layout=grid&preview.script=Latn
