@@ -1,3 +1,9 @@
+# Differences from static to dynamic site
+>Only showing content from the NSFA film and TV collection which has images
+
+>No themes section for each decade
+
+
 # Figma File Link
 > https://www.figma.com/design/wfkBb4atbzEo1sZ7asfAlR/NFSA-Website?node-id=0-1&t=AbqZwCHCxXKGThuT-1
 

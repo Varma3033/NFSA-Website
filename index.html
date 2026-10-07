@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Austrlian Film &amp; TV in Time</title>
+    <title>Australian Film &amp; TV in Time</title>
+    <link rel="icon" href="data:,"/>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   </head>
-
-  <body>
+  
+  <body id="home">
     <div class="tv-body">
       <section class="tv-frame">
         <div class="hero-text">
@@ -23,133 +24,22 @@
           </p>
         </div>
 
-        <div class="channels-section" id="channels">
-            <h2>Each channel represents a collection of film and tv items per decade corresponding to the channel number.</p>
+        <div id="channels" class="channels-section">
+            <h2>Each channel represents a collection of film and tv items with images, per decade corresponding to the channel number.</p>
             <h3>Click on a channel to explore the decade further.</h3>
         </div>
-
-        <div class="decade-carousel" id="decadeCarousel">
-          <a class="decades" href="ch1890.html">
-            <span class="channel-label">CH 1890</span>
-            <div class="ch-images">
-            <!--images will be populated via API-->
-            <span class="ch-img">image</span>            
-            <span class="ch-img">image</span>
-            </div>
-            <!--item count will be populated via API-->
-            <span class="item-count">.... items</span>
-          </a>
-          <a class="decades" href="ch1900.html">
-            <span class="channel-label">CH 1900</span>
-            <div class="ch-images">
-            <span class="ch-img">image</span>
-            <span class="ch-img">image</span>
-            </div>
-             <span class="item-count">.... items</span>
-          </a>
-          <a class="decades" href="ch1910.html">
-            <span class="channel-label">CH 1910</span>
-            <div class="ch-images">
-            <span class="ch-img">image</span>
-            <span class="ch-img">image</span>
-            </div>
-             <span class="item-count">.... items</span>
-          </a>
-          <a class="decades" href="ch1920.html">
-            <span class="channel-label">CH 1920</span>
-            <div class="ch-images">
-            <span class="ch-img">image</span>
-            <span class="ch-img">image</span>
-            </div>
-             <span class="item-count">.... items</span>
-          </a>
-          <a class="decades" href="ch1930.html">
-            <span class="channel-label">CH 1930</span>
-            <div class="ch-images">
-            <span class="ch-img">image</span>
-            <span class="ch-img">image</span>
-            </div>
-             <span class="item-count">.... items</span>
-          </a>
-          <a class="decades" href="ch1940.html">
-            <span class="channel-label">CH 1940</span>
-            <div class="ch-images">
-            <span class="ch-img">image</span>
-            <span class="ch-img">image</span>
-            </div>
-             <span class="item-count">.... items</span>
-          </a>
-          <a class="decades" href="ch1950.html">
-            <span class="channel-label">CH 1950</span>
-            <div class="ch-images">
-            <span class="ch-img">image</span>
-            <span class="ch-img">image</span>
-            </div>
-             <span class="item-count">.... items</span>
-          </a>
-          <a class="decades" href="ch1960.html">
-            <span class="channel-label">CH 1960</span>
-            <div class="ch-images">
-            <span class="ch-img">image</span>
-            <span class="ch-img">image</span>
-            </div>
-            <span class="item-count">.... items</span>
-          </a>
-          <a class="decades" href="ch1970.html">
-            <span class="channel-label">CH 1970</span>
-            <div class="ch-images">
-            <span class="ch-img">image</span>
-            <span class="ch-img">image</span>
-            </div>
-            <span class="item-count">.... items</span>
-          </a>
-          <a class="decades" href="ch1980.html">
-            <span class="channel-label">CH 1980</span>
-            <div class="ch-images">
-            <span class="ch-img">image</span>
-            <span class="ch-img">image</span>
-            </div>
-            <span class="item-count">.... items</span>
-          </a>
-          <a class="decades" href="ch1990.html">
-            <span class="channel-label">CH 1990</span>
-            <div class="ch-images">
-            <span class="ch-img">image</span>
-            <span class="ch-img">image</span>
-            </div>
-            <span class="item-count">.... items</span>
-          </a>
-          <a class="decades" href="ch2000.html">
-            <span class="channel-label">CH 2000</span>
-            <div class="ch-images">
-            <span class="ch-img">image</span>
-            <span class="ch-img">image</span>
-            </div>
-            <span class="item-count">.... items</span>
-          </a>
-          <a class="decades" href="ch2010.html">
-            <span class="channel-label">CH 2010</span>
-            <div class="ch-images">
-            <span class="ch-img">image</span>
-            <span class="ch-img">image</span>
-            </div>
-            <span class="item-count">.... items</span>
-          </a>
-          <a class="decades" href="ch2020.html">
-            <span class="channel-label">CH 2020</span>
-            <div class="ch-images">
-            <span class="ch-img">image</span>
-            <span class="ch-img">image</span>
-            </div>
-            <span class="item-count">.... items</span> 
-          </a>
-        </div>
-        <!--collection count populated via API-->
+     
+        <!--channel cards and images populated via api in showHomepage()-->
+        <div id="decadeCarousel" class="decade-carousel"></div>
+        
         <p class="items-numbers">
-          This website holds a collection of ...... items from the National Film
+          This website holds a collection of Film and TV items from the National Film
           and Sound Archive of Australia.
         </p>
-        <p class="copyright">&copy;U3228533 2026. Produced by students in the Faculty of Arts & Design, University of Canberra.</p>
+        <p class="copyright">
+          &copy;U3228533 2026. Produced by students in the Faculty of Arts &amp;
+          Design, University of Canberra.
+        </p>
       </section>
        
       <div class="nav-wrapper">
@@ -162,5 +52,6 @@
         </nav>
       </div>
     </div>
+  <script src="js/index.js" defer></script>
   </body>
 </html>

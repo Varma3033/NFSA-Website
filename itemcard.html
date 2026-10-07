@@ -3,71 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Austrlian Film &amp; TV in Time</title>
+    <title>Australian Film &amp; TV in Time</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
   </head>
 
-  <body>
+  <body id="itemcard">
     <div class="tv-body">
       <section class="tv-frame">
-        <!--change decade div will be populated via API to either go back to collection or change to the next item in the collection when clicked-->
-        <div class="change-decade">
-          <a class="back-btn" href="ch1890.html">&lsaquo; Back</a>
-
-          <!--only showing 2 diferent item cards since Javascript and API will be used to loop through and fill each item in the collection-->
-          <span class="current-decade">Item Title A</span>
-          <a class="cd-arrow" href="similaritemcard.html">&rsaquo;</a>
-          <a class="cd-text" href="similaritemcard.html">Next Item Title</a>
-        </div>
-
-        <!--Item details and tags will be populated via API -->
-        <div class="item-body">
-        <div class="item-details">
-          <div class="item-data">
-            <p class="data-line"><strong>Item Title &ndash; Year</strong></p>
-            <p class="data-line">NFSA ID</p>
-            <p class="data-line">Type</p>
-            <p class="data-line">Medium</p>
-            <p class="data-line">Form</p>
-
-            <div class="item-tags">
-                <span class="hashtag">Tag 1</span>
-                <span class="hashtag">Tag 2</span>
-                <span class="hashtag">Tag 3</span>
-            </div>
-          </div>
-
-          <div class="curitem-img">Image</div>
-        </div>
-
-        <div class="similar-items">
-            <h2>Similar Items in the collection</h2>
-        <!--Similar item will be populated via API, using similar genre/tagged items-->    
-        <div class="item-grid">
-            <a class="item-card" href="similaritemcard.html">
-                <span class="item-img">Image</span>
-                <span class="item-title">Title &ndash; Year</span>
-            </a>
-            <a class="item-card" href="similaritemcard.html">
-                <span class="item-img">Image</span>
-                <span class="item-title">Title &ndash; Year</span>
-            </a>
-            <a class="item-card" href="similaritemcard.html">
-                <span class="item-img">Image</span>
-                <span class="item-title">Title &ndash; Year</span>
-            </a>
-        </div>
-        </div>
-        </div>
+        <!--populated via API in showItem() to go back to collection-->
+        <div id="changeDecade" class="change-decade"></div>
+          
+        <!--Item details, tags and images, amd similar items will be populated via API in showContent()-->
+        <div id="itemBody" class="item-body"></div>
+        
         <p class="items-numbers">
-          This website holds a collection of ...... items from the National Film
+          This website holds a collection of Film and TV items from the National Film
           and Sound Archive of Australia.
         </p>
         <p class="copyright">
-          &copy;U3228533 2026. Produced by students in the Faculty of Arts &
+          &copy;U3228533 2026. Produced by students in the Faculty of Arts &amp;
           Design, University of Canberra.
         </p>
       </section>
@@ -82,5 +39,6 @@
         </nav>
       </div>
     </div>
+  <script src="js/index.js" defer></script>
   </body>
 </html>

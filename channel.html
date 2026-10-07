@@ -6,22 +6,26 @@
     <title>Australian Film &amp; TV in Time</title>
     <link rel="icon" href="data:,"/>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
-  <body id="random">
+  <body id="channel">
     <div class="tv-body">
       <section class="tv-frame">
-        <!--random section will be populated via API to allow users to randomly explore the collection-->  
-        <!--Each time random button is clicked, a new/random item from the collection will be shown-->
-        <div class="change-decade">
-          <span id="randomLabel" class="current-decade">Random</span>
-          <a class="cd-text" href="random.html">Randomise &rsaquo;</a>
+        <!--populated in showChannel()-->
+        <div id="changeDecade" class="change-decade"></div>
+          
+          <!--no. film and tv items populated via API-->
+        <div id="count" class="decade-count">
         </div>
-        <!--Item details, tags and images, and similar items will be populated via API in showContent()-->
-        <div id="itemBody" class="item-body"></div>
+
+        <!--collection cards will populated via API -->
+        <div id="grid" class="decade-grid"></div>
 
         <p class="items-numbers">
           This website holds a collection of Film and TV items from the National Film
