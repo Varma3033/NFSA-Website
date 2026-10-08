@@ -328,16 +328,28 @@ async function showCollectionContent() {
   //medium type
   document.getElementById("typeTitle").textContent = type === "tv" ? "TV" : "Film"; 
 
+  //switch collection type
+  const switchType = type === "film" ? "tv" : "film";
+  const typeLabel = switchType === "tv" ? "TV" : "Film";
+
   //back to channel page btn
   document.getElementById("changeDecade").innerHTML = `<a class="back-btn" href="channel.html?decade=${decade}">&lsaquo; Back</a>
   
   <!-- decade -->
-  <h1 class="current-decade">${decade}s</h1>`;
+  <h1 class="current-decade">${decade}s</h1>
+  
+  <!--switch type btn-->
+  <a class="switch-btn" href="collection.html?decade=${decade}&type=${switchType}">Switch to ${typeLabel}</a>`;
 
   message(stateMessage, "Loading....");
 
   try {
     const contents = await getItemImgs(decade);
+
+    //hide switch btn if no items in other collection
+    if(contents[switchType].length === 0) {
+      document.querySelector(".switch-btn").style.display = "none";
+    }
 
     //save film and tv list to titles
     titles = contents[type];

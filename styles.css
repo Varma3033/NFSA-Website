@@ -343,6 +343,26 @@ h1 {
   color: white;
 }
 
+/*switch type btn*/
+.switch-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: clamp(0.6rem, 1.5vw, 1.5rem);
+  color: white;
+  padding:2px 4px;
+  background: black;
+  border-radius: 5px;
+  border: 2px solid black;
+  text-decoration: none;
+}
+
+.switch-btn:hover {
+  color: black;
+  background: white;
+}
+
 /*decade info page*/
 .decade-count {
   width: 100%;
@@ -630,7 +650,7 @@ a.type-card:hover {
   #channel .back-btn {
     display: none;
   }
-
+  
   /*turn into top-navigation*/
   .nav-wrapper {
     order: -1;

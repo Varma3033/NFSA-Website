@@ -24,7 +24,6 @@ Commented in js.
 Due to fetching content from NFSA.
 Using local storage stores data in browser, so site loads quicker afterwards.
 
-
 >No css or frontend framework used:
 I have a custom designed page, so I figured, these framework would not suit.
 
