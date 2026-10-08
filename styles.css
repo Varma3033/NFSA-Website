@@ -301,18 +301,17 @@ h1 {
 .back-btn {
   position: absolute;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: clamp(0.75rem, 1.5vw, 1.5rem);
+  font-size: clamp(0.6rem, 1.5vw, 1.5rem);
   color: black;
+  padding:2px 4px;
+  border-radius: 5px;
+  border: 2px solid black;
   text-decoration: none;
 }
 
 .back-btn:hover {
-  text-decoration: underline;
+  color: white;
+  background: black;
 }
 
 .cd-text {
@@ -347,20 +346,17 @@ h1 {
 .switch-btn {
   position: absolute;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
   font-size: clamp(0.6rem, 1.5vw, 1.5rem);
-  color: white;
+  color: black;
   padding:2px 4px;
-  background: black;
   border-radius: 5px;
   border: 2px solid black;
   text-decoration: none;
 }
 
 .switch-btn:hover {
-  color: black;
-  background: white;
+  color: white;
+  background: black;
 }
 
 /*decade info page*/
