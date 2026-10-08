@@ -60,12 +60,12 @@ async function getItemImgs(year) {
   
   //web address to fetch
   const url = `${apiurl}?year=${year}-${year+9}&subMedium=Documentation&hasMedia=yes&limit=25`;
-  const response = await fetch(url + "&page=1");
+  const apiRes = await fetch(url + "&page=1");
 
   //error state
-  if (!response.ok) throw new Error(`Page error! ${response.status}`);
+  if (!apiRes.ok) throw new Error(`Oops! Something went wrong. ${apiRes.status}`);
   
-  const data = await response.json();
+  const data = await apiRes.json();
   let results = data.results;
 
   //get other pages of results
@@ -78,10 +78,11 @@ async function getItemImgs(year) {
     requests.push(fetch(url + "&page=" + page));
    }
     //wait for the 25
-    const responses = await Promise.all(requests);
+    const pageRes = await Promise.all(requests);
 
     //add each page to a list for sorting images
-    for (const result of responses) {
+    for (const result of pageRes) {
+    if (!result.ok) throw new Error (`Oops! Something went wrong. ${result.status}`)
     const pageData = await result.json();
     results = results.concat(pageData.results); 
    }
@@ -172,8 +173,9 @@ function showHomepage() {
 
       //look through 5 pages for safety
       for (let page=1; page<=5 && imgDiv.children.length < imgCount; page++) {
-        const response = await fetch(`${apiurl}?year=${year}-${year+9}&subMedium=Documentation&hasMedia=yes&limit=25&page=${page}`)
-        const data = await response.json();
+        const imgRes = await fetch(`${apiurl}?year=${year}-${year+9}&subMedium=Documentation&hasMedia=yes&limit=25&page=${page}`)
+        if (!imgRes.ok) throw new Error(`Oops! Something went wrong. ${imgRes.status}` )
+        const data = await imgRes.json();
         data.results.forEach(item => {
         const image = getImage(item);
         
@@ -220,7 +222,7 @@ function contentCard(label, titleType, list) {
   
   //empty state if film or tv list is empty
   if (list.length === 0) {
-    return `<div class="type-card"><span class="type-name">${label}</span><span class="type-count">No ${label} item with images</span></div>`;
+    return `<div class="type-card"><span class="type-name">${label}</span><span class="type-count">No items with images</span></div>`;
   }
   
   //building film and tv collection cards
@@ -249,7 +251,8 @@ function contentCard(label, titleType, list) {
 async function showChannel() {
   const count = document.getElementById("count");
   const grid = document.getElementById("grid");
-  //edge case, make sure decade = channel number
+  
+  //edge case - check decade in page address
   if (!decades.includes(decade)) {
     message(count,"Page not found.");
     return;
@@ -313,10 +316,9 @@ if (moreBtn) moreBtn.addEventListener("click", showMoreItems);
 //collection page function
 async function showCollectionContent() {
   const stateMessage = document.getElementById("stateMessage");
-
-  //edge case-if not in relevant decade or not film/tv show error
+  
   if (!decades.includes(decade) || (type !== "film" && type !== "tv")) {
-    message(stateMessage, "Oops! Something went wrong.");
+    message(stateMessage, "Page not found.");
     return;
   }
   
@@ -339,7 +341,7 @@ async function showCollectionContent() {
     stateMessage.innerHTML = "";
     
     //empty state
-    if (titles.length === 0) message(stateMessage, "No images yet.");
+    if (titles.length === 0) message(stateMessage, "No information.");
     
     //input function to show first 24 items
     showMoreItems();
@@ -403,7 +405,7 @@ async function showContent(itemBody, content, list, year) {
     details.innerHTML = `
     <p class="data-line title-case">Director: ${director?.name.toLowerCase() ?? "Unknown"}</p>
     <p class="data-line">NFSA ID: <a class="nfsa-link" href="https://collection.nfsa.gov.au/title/${record.id}" target="_blank" rel="noopener">${record.id}</a></p>
-    <p class="data-line">${record.summary || "No information"}</p>`;
+    <p class="data-line">${record.summary || "No information."}</p>`;
   } catch (error) {
       showError(details,error);
   }
@@ -413,6 +415,12 @@ async function showContent(itemBody, content, list, year) {
 //Item page function
 async function showItem() {
   const itemBody = document.getElementById("itemBody");
+
+  //edge case - check decade or type in page address
+  if (!decades.includes(decade) || (type !== "film" && type !== "tv")) {
+    message(itemBody, "Page not found.");
+    return;
+  }
 
   //back btn
   document.getElementById("changeDecade").innerHTML = `<a class="back-btn" href="collection.html?decade=${decade}&type=${type}">&lsaquo; Back</a>`;
@@ -425,7 +433,7 @@ async function showItem() {
     const list = contents[type] || [];
     const content = list.find(content => content.title === title);
 
-    //use function if a title matches page address else edge case/error
+    //use function if title matches page address
     if (content) showContent(itemBody, content, list, decade);
     else message(itemBody, "No content found.");
   } catch (error) {
