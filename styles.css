@@ -567,63 +567,6 @@ h1 {
   border-radius: 15px;
 }
 
-/*Error page
-.error-wrapper {
-  flex: 1;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(5px, 1vw, 10px)
-}
-
-.error-title {
-  margin: 0 0 5px;
-  font-size: clamp(1.5rem, 5vw, 4rem);
-  font-weight: bold;
-  color: rgb(180, 39, 39);
-}
-
-.error-text {
-  font-size: clamp(0.75rem, 3vw, 2rem);
-  color: rgba(0, 0, 0, 0.7);
-  margin: clamp(5px, 1vw, 20px);
-}
-
-.errorback-btn {
-  margin: clamp(10px, 2vw, 20px);
-  padding: clamp(10px, 1.5vw, 20px);
-  color: white;
-  background: black;
-  border-radius: 15px;
-  text-decoration: none;
-  font-size: clamp(0.75rem, 2vw, 1.5rem);
-}
-
-.errorback-btn:hover {
-  background: white;
-  color: black;
-}
-
-.error-image {
-  flex: 0 0 clamp(75px, 50vw, 250px);
-  aspect-ratio: 1/1;
-  border-radius: 15px;
-  background: repeating-linear-gradient(
-    45deg,
-    lightgrey,
-    lightgrey 8px,
-    grey 10px,
-    grey 10px
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: black;
-  font-size: 0.75rem;
-} */
-
 /*capitalising titles*/
 .title-case, .item-title {
   text-transform: capitalize;
@@ -757,12 +700,11 @@ h1 {
     gap: 30px;
   }
 
-  /* possibility?
+  /* possibility?*/
   .cd-text {
     display: none;
   }
-  */
-
+  
   .item-body {
     overflow-y: hidden;
   }
