@@ -62,7 +62,7 @@ async function getItemImgs(year) {
   const url = `${apiurl}?year=${year}-${year+9}&subMedium=Documentation&hasMedia=yes&limit=25`;
   const apiRes = await fetch(url + "&page=1");
 
-  //error state
+  //error state - for actual errors
   if (!apiRes.ok) throw new Error(`Oops! Something went wrong. ${apiRes.status}`);
   
   const data = await apiRes.json();
@@ -99,11 +99,13 @@ async function getItemImgs(year) {
     if(contentType ==="" || !image) return;
 
     // add/find img titles to group imgs
-    let content = contents[contentType].find(img => img.title === item.parentVersion.title);
+    const itemName=item.parentVersion.title || "Unknown";
+    let content = contents[contentType].find(img => img.title === itemName);
     if (!content) {
-      content = {title: item.parentVersion.title || "Unknown", year: item.productionDates?.[0]?.fromYear ?? 0, type:contentType, images:[]};
+      content = {title: itemName, year: item.productionDates?.[0]?.fromYear ?? 0, type:contentType, images:[]};
       contents[contentType].push(content);
     }
+
     //allow up to 5 images in item card
     if (content.images.length < 5) content.images.push(image);
   });
@@ -123,7 +125,7 @@ function collectionCard(content, year) {
 
   //includes image, title and year of item and link to itemcard page
   return `<a class="item-card" href="itemcard.html?decade=${year}&type=${content.type}&title=${encodeURIComponent(content.title)}">
-  <span class="item-img"><img src="${content.images[0].small}" alt=""></span>
+  <span class="item-img"><img src="${content.images[0].small}" alt="${content.title}"></span>
   <span class="item-title">${content.title.toLowerCase()} - ${content.year || "unknown"}</span>
   </a>`;
 }
@@ -220,7 +222,7 @@ async function showAbout() {
 //film and tv collection card in channel page
 function contentCard(label, titleType, list) {
   
-  //empty state if film or tv list is empty
+  //empty state card if film or tv list is empty
   if (list.length === 0) {
     return `<div class="type-card"><span class="type-name">${label}</span><span class="type-count">No items with images</span></div>`;
   }
@@ -309,7 +311,7 @@ function showMoreItems() {
 
 //more button on collection page
 const moreBtn = document.getElementById("moreBtn");
-//call showMoreItems function when clicked
+//call showMoreItems when clicked
 if (moreBtn) moreBtn.addEventListener("click", showMoreItems);
 
 
@@ -356,7 +358,7 @@ async function showContent(itemBody, content, list, year) {
   //show all images for an item as thumbnail pictures that become big when clicked
   let thumbnails = "";
   content.images.forEach(image => {
-    thumbnails += `<img class="item-thumbnail" src="${image.small}" alt="" onclick="document.getElementById('bigImage').src='${image.big}'">`;
+    thumbnails += `<img class="item-thumbnail" src="${image.small}" alt="${content.title}" onclick="document.getElementById('bigImage').src='${image.big}'">`;
   });
 
   //show the 3 next items in collection and create item cards
@@ -369,7 +371,7 @@ async function showContent(itemBody, content, list, year) {
   //input cached data first and input loading message for extra details
   itemBody.innerHTML = `<div class="item-details">
   <div class="item-data">
-  <p class="data-line title-case">${content.title.toLowerCase()} - ${content.year || "unknown"}</p>
+  <p class="data-line title-case">${content.title.toLowerCase()} - ${content.year || "Unknown"}</p>
   <p class="data-line">Type: ${content.type === "tv" ? "TV" : "Film"}</p>
   <div id="details"><p class="data-line">Loading....</p></div>
   <div class="thumbnails">${thumbnails}</div>
@@ -386,13 +388,16 @@ async function showContent(itemBody, content, list, year) {
   try {
     const subMedium = content.type === "tv" ? "Television" : "Film";
 
-    //search api by item title, if error - error state
+    //search api by item title & get film/tv item with exact title
     const titleRes = await fetch(`${apiurl}?query=${encodeURIComponent(content.title)}&subMedium=${subMedium}&limit=25`);
     if (!titleRes.ok) throw new Error(`Oops! Something went wrong. ${titleRes.status}`);
-    const data = await titleRes.json();
-
-    //get film/tv item with exact title, if error-error state
+    
+    //get res as text and then turn into obj - prevent crash
+    const textRes = await titleRes.text();
+    const data = textRes ? JSON.parse(textRes) : {results:[]};
     const record = data.results.find(item => item.title === content.title);
+
+    //empty state
     if (!record) {
       message(details, "No information.");
       return;
@@ -403,7 +408,7 @@ async function showContent(itemBody, content, list, year) {
        
     //input extra item details
     details.innerHTML = `
-    <p class="data-line title-case">Director: ${director?.name.toLowerCase() ?? "Unknown"}</p>
+    <p class="data-line title-case">Director: ${director?.name?.toLowerCase() ?? "Unknown"}</p>
     <p class="data-line">NFSA ID: <a class="nfsa-link" href="https://collection.nfsa.gov.au/title/${record.id}" target="_blank" rel="noopener">${record.id}</a></p>
     <p class="data-line">${record.summary || "No information."}</p>`;
   } catch (error) {
@@ -434,7 +439,7 @@ async function showItem() {
     const content = list.find(content => content.title === title);
 
     //call function if title matches page address
-    if (content) showContent(itemBody, content, list, decade);
+    if (content) await showContent(itemBody, content, list, decade);
     else message(itemBody, "No content found.");
   } catch (error) {
     showError(itemBody, error);
@@ -462,7 +467,7 @@ async function showRandomItem() {
     const content = allContents[Math.floor(Math.random() * allContents.length)];
     
     //call function when item is picked
-    showContent(itemBody, content, allContents, year);
+    await showContent(itemBody, content, allContents, year);
   } catch (error) {
     showError(itemBody, error);
   }

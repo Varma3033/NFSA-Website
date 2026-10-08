@@ -420,6 +420,11 @@ a.type-card:hover {
 }
 
 /*decade collection pages*/
+.type-title {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  margin: clamp(5px, 2vw, 10px)
+}
+
 .item-grid {
   width: 100%;
   display: grid;
