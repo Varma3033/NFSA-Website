@@ -301,7 +301,7 @@ h1 {
 .back-btn {
   position: absolute;
   left: 0;
-  font-size: clamp(0.6rem, 1.5vw, 1.5rem);
+  font-size: clamp(0.7rem, 1.5vw, 1.5rem);
   color: black;
   padding:2px 4px;
   border-radius: 5px;
@@ -346,7 +346,7 @@ h1 {
 .switch-btn {
   position: absolute;
   right: 0;
-  font-size: clamp(0.6rem, 1.5vw, 1.5rem);
+  font-size: clamp(0.7rem, 1.5vw, 1.5rem);
   color: black;
   padding:2px 4px;
   border-radius: 5px;
