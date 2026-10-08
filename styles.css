@@ -316,7 +316,7 @@ h1 {
 }
 
 .cd-text {
-  font-size: clamp(0.9rem, 1.75vw, 1.5rem);
+  font-size: clamp(0.75rem, 1.75vw, 1.5rem);
   color: black;
   text-decoration: none;
 }
@@ -411,7 +411,7 @@ a.type-card:hover {
 }
 
 .current-decade {
-  /*margin: 0; */
+  margin: 0;
   font-size: clamp(0.8rem, 4vw, 2.5rem);
   color: black;
   text-decoration: none;
@@ -569,6 +569,22 @@ a.type-card:hover {
   object-fit: cover;
   border-radius: 5px;
   cursor: pointer;
+}
+
+/*randomise text*/
+.rand-text {
+  font-size: clamp(0.9rem, 1.75vw, 1.5rem);
+  color: white;
+  padding:2px 4px;
+  background-color: black;
+  border-radius: 5px;
+  text-decoration: none;
+  border: 2px solid black;
+}
+
+.rand-text:hover {
+  color: black;
+  background: white;
 }
 
 /*collection page more button*/
