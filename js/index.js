@@ -309,7 +309,7 @@ function showMoreItems() {
 
 //more button on collection page
 const moreBtn = document.getElementById("moreBtn");
-//run showMoreItems function when clicked
+//call showMoreItems function when clicked
 if (moreBtn) moreBtn.addEventListener("click", showMoreItems);
 
 
@@ -343,7 +343,7 @@ async function showCollectionContent() {
     //empty state
     if (titles.length === 0) message(stateMessage, "No information.");
     
-    //input function to show first 24 items
+    //call function to show first 24 items
     showMoreItems();
   } catch (error) {
     showError(stateMessage, error);
@@ -433,7 +433,7 @@ async function showItem() {
     const list = contents[type] || [];
     const content = list.find(content => content.title === title);
 
-    //use function if title matches page address
+    //call function if title matches page address
     if (content) showContent(itemBody, content, list, decade);
     else message(itemBody, "No content found.");
   } catch (error) {
@@ -461,7 +461,7 @@ async function showRandomItem() {
     //pick random item from film and tv
     const content = allContents[Math.floor(Math.random() * allContents.length)];
     
-    //use function when item is picked
+    //call function when item is picked
     showContent(itemBody, content, allContents, year);
   } catch (error) {
     showError(itemBody, error);
