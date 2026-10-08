@@ -1,8 +1,10 @@
 # Differences from static to dynamic site
 >Only showing content from the NSFA film and TV collection which has images
+Many NFSA titles had no images, after looking at initial api request results, and I wanted a visual exploration of the NFSA collection.
 
 >No themes section for each decade
-
+No themes
+>No tags
 
 # Figma File Link
 > https://www.figma.com/design/wfkBb4atbzEo1sZ7asfAlR/NFSA-Website?node-id=0-1&t=AbqZwCHCxXKGThuT-1

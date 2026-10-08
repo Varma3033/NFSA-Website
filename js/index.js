@@ -219,6 +219,7 @@ async function showAbout() {
     }
 }
 
+
 //film and tv collection card in channel page
 function contentCard(label, titleType, list) {
   
