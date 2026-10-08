@@ -595,17 +595,16 @@ a.type-card:hover {
 /*randomise text*/
 .rand-text {
   font-size: clamp(0.9rem, 1.75vw, 1.5rem);
-  color: white;
+  color: black;
   padding:2px 4px;
-  background-color: black;
   border-radius: 5px;
   text-decoration: none;
   border: 2px solid black;
 }
 
 .rand-text:hover {
-  color: black;
-  background: white;
+  color: white;
+  background: black;
 }
 
 /*collection page more button*/
@@ -614,17 +613,16 @@ a.type-card:hover {
   font-size: clamp(0.75rem, 1.5vw, 1.25rem);
   padding: 10px 20px;
   margin-bottom: 20px;
-  color: white;
+  color: black;
   cursor: pointer;
-  background: black;
   border: 2px solid black;
   border-radius: 10px;
   display: none;
 }
 
 #moreBtn:hover {
-  background: white;
-  color: black;
+  background: black;
+  color: white;
 }
 
 /*smaller screen*/
