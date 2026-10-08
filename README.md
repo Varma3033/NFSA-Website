@@ -1,40 +1,51 @@
-# Differences from static to dynamic site
->Only showing content from the NSFA film and TV collection which has images
+# Run Locally
+-Download code from github and unzip
+
+-Open in vscode and run through liveserver
+
+or
+
+-Use live version:
+
+
+
+# Notes
+>Only showing content from the NSFA film and TV collection which has images:
 Many NFSA titles had no images, after looking at initial api request results, and I wanted a visual exploration of the NFSA collection.
 
->No themes section for each decade
-No themes
->No tags
-
-# Figma File Link
-> https://www.figma.com/design/wfkBb4atbzEo1sZ7asfAlR/NFSA-Website?node-id=0-1&t=AbqZwCHCxXKGThuT-1
-
-
-# Differences in Wireframe and Static Site
-
 >No Search Page:
-Purposefully designed so that users can explore, rather than search; following the theories of generous interfaces and information flaneur. After users click on/check out a specific item, they can either go back to see the rest of the collection; or they can checkout similar items shown on the screen, allowing them to wander and see more options from other decades in the collection
+Purposefully designed so that users can explore, rather than search; following the theories of generous interfaces and information flaneur. After users click on/check out a specific item, they can either go back to see the rest of the collection; or they can checkout similar items shown on the screen, allowing them to wander and see more options from other decades in the collection.
+
+>Loading, error, empty states, edge cases and caching implemented
+Commented in js.
+
+>First time the site loads, takes a few seconds
+Due to fetching content from NFSA.
+Using local storage stores data in browser, so site loads quicker afterwards.
 
 
-# Things to add/fix
->All images, collection items & details, and collection counts:
-They will be populated via API and collection item cards will be created through javascript-repeat card elements. Also random section will use javascript to view a random card each time the random dial is clicked, and then populated via API.
+>No css or frontend framework used:
+I have a custom designed page, so I figured, these framework would not suit.
 
->TV frame:
-Want to make site look more realistic, like an old-scholl TV
+>No themes and no tags for items:
+Could not figure out getting themes and tags/ran out of time.
 
->Animations and transitions through Javascript:
-Things like Dials turning, carousel, and dynamic elements to help give off a better tv effect.
-
->Font-family:
-Not sure about the current font, might change as I dont like the headings being so bold. Also maybe need to fix sizing on smaller screens
 
 # References
->MDN Web Docs (2025, December 22). HTML: HyperText Markup Language.https://developer.mozilla.org/en-US/docs/Web/HTML
-
->W3Schools. (n.d.) HTML styles CSS. https://www.w3schools.com/css/default.asp
+>Butler, B.E. (2026). Module 3 to Module 6. Canvas. https://uclearn.canberra.edu.au/courses/20593/modules
 
 >Claude AI: 
-Mainly with the outside tv frame - helped fix frame and navigation alignment/padding, especially when scaling screen size down. Also helped with creating placeholder image pattern design.
+-Helped with troubleshooting little errors/mistakes in js.
+-Helped with the outside tv frame - helped fix frame and navigation alignment/padding, especially when scaling screen size down. 
+-Helped with creating placeholder image pattern design.
 
-> Hull, P. (2011). VT323 [Font]. Google Fonts. https://fonts.google.com/specimen/VT323?preview.layout=grid&preview.script=Latn
+>Hull, P. (2011). VT323 [Font]. Google Fonts. https://fonts.google.com/specimen/VT323?preview.layout=grid&preview.script=Latn
+
+>MDN Web Docs (2025, August 20). Using the Fetch API. https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
+>MDN Web Docs (2025, December 22). HTML: HyperText Markup Language. https://developer.mozilla.org/en-US/docs/Web/HTML
+
+>MDN Web Docs (2026, May 22). JavaScript. https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+>W3Schools. (n.d.). HTML styles CSS. https://www.w3schools.com/css/default.asp
+
