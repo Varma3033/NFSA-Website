@@ -325,12 +325,6 @@ h1 {
   color: grey;
 }
 
-.cd-textna {
-  font-size: clamp(0.9rem, 1.75vw, 1.5rem);
-  color: black;
-  text-decoration: none;
-}
-
 .cd-arrow {
   display: flex;
   align-items: center;
@@ -353,17 +347,8 @@ h1 {
 .decade-count {
   width: 100%;
   text-align: center;
-  margin-bottom: clamp(20px, 5vw, 20px);
-}
-
-.decade-count h2 {
-  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-  margin: 0 0 10px;
-}
-
-.decade-count p {
+  margin-bottom: 20px;
   font-size: clamp(0.75rem, 1.5vw, 1rem);
-  margin: 0 auto;
   line-height: 1.5;
   color: black;
   max-width: 620px;
@@ -389,7 +374,7 @@ h1 {
   gap: 12px;
 }
 
-.type-card:hover {
+a.type-card:hover {
    border: 2px solid black;
 }
 
@@ -506,23 +491,6 @@ h1 {
   color: Black;
 }
 
-.item-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.hashtag {
-  background: rgba(0, 0, 0, 0.5);
-  color: black;
-  font-size: clamp(0.7rem, 1.25vw, 0.9rem);
-  padding: 5px 10px;
-  border-radius: 15px;
-  /* border: 2px solid rgba(0, 0, 0, 0.5);
-  text-decoration: none; */
-}
-
 .curitem-img {
   flex: 0 0 clamp(75px, 50vw, 400px);
   aspect-ratio: 1/1;
@@ -614,6 +582,7 @@ h1 {
   background: black;
   border: 2px solid black;
   border-radius: 10px;
+  display: none;
 }
 
 #moreBtn:hover {
@@ -634,6 +603,17 @@ h1 {
 
   .channels-section h2 {
     margin: 0 50px;
+  }
+
+  /*Back*/
+  .change-decade {
+    flex-wrap: wrap;
+  }
+
+  .back-btn {
+    position: static;
+    transform: none;
+    width: 100%;
   }
 
   /*turn into top-navigation*/
@@ -700,11 +680,6 @@ h1 {
     gap: 30px;
   }
 
-  /* possibility?*/
-  .cd-text {
-    display: none;
-  }
-  
   .item-body {
     overflow-y: hidden;
   }
