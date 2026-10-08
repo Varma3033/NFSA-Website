@@ -605,15 +605,9 @@ a.type-card:hover {
     margin: 0 50px;
   }
 
-  /*Back*/
-  .change-decade {
-    flex-wrap: wrap;
-  }
-
-  .back-btn {
-    position: static;
-    transform: none;
-    width: 100%;
+  /*back*/
+  #channel .back-btn {
+    display: none;
   }
 
   /*turn into top-navigation*/
